@@ -1,9 +1,13 @@
 require('dotenv').config();
+import cors from "cors";
 import express from "express";
 import {login, signup} from "./auth";
 import { client } from "./db";
 const app = express();
 app.use(express.json());
+app.use(cors({
+	origin: '*',
+}));
 app.post("/login", login);
 app.post("/signup",signup)
 client.connect(err => {
