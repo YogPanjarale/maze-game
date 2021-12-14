@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 
 export interface User {
     id: number;
-    nick : string;
+    username : string;
     logged_in?: boolean;
     token?: string;
 }
@@ -15,7 +15,7 @@ export const getToken = (): string => {
 };
 export const user = writable<User>({
     id: 0,
-    nick: "",
+    username: "",
     token: getToken()
 });
 

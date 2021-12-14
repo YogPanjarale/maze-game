@@ -1,19 +1,28 @@
 <script lang="ts">
-import { onMount } from 'svelte';
+import {
+    onMount
+} from 'svelte';
 
 export let isSignUp = false;
-import {setToken, user as user_store} from './user';
-import type { User } from './user';
-import { goto } from '$app/navigation';
+import {
+    setToken,
+    user as user_store
+} from './user';
+import type {
+    User
+} from './user';
+import {
+    goto
+} from '$app/navigation';
 let username = "";
 let password = "";
 let error = "" || "Please choose a password.";
 let user: User;
 user_store.subscribe(function(new_user) {
-  user = new_user;
+    user = new_user;
 });
 onMount(() => {
-    if (user.token){
+    if (user.token) {
         goto("/");
     }
 });
@@ -33,7 +42,15 @@ const handle = async () => {
         error = data.error;
     } else {
         error = "";
-        user_store.set(data.user);
+        const {
+            _id,
+            username
+        } = data.user;
+        user_store.set({
+            username,
+            id: _id,
+            token: data.token
+        });
         setToken(data.token);
         goto("/");
         // console.log(data)
