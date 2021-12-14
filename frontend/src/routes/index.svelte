@@ -72,3 +72,14 @@ const typeIt = () => {
             <input class = "font-bak border-2 border-transparent text-white bg-slate-800 font-semibold text-xl p-2 focus:outline-none focus:bg-slate-900 focus:border-4 focus:border-[#EE553A]"type="text" placeholder="Enter your Game code"/>
         </div>
     </div>
+ <!-- footer -->
+ <footer class="fixed left-0 bottom-0 w-screen  flex flex-reverse-row items-center pb-8 text-center justify-center">
+
+    <div class=" text-white text-sm font-bak">
+        <p>
+            <a href="https://www.yogpanjarale.com" class=" text-white">
+                Made with ❤️&🕐 by Yog Panjarale
+            </a>
+        </p>
+    </div>
+</footer>
