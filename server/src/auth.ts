@@ -29,8 +29,7 @@ export const login = async (req: Request, res: Response) => {
     }
 	return res.json({
 		username,
-		token: jwt.sign({ username }, KEY),
-		// user,
+		token: jwt.sign({ username,id:user.user!._id }, KEY),
 	});
 };
 export const signup = async (req: Request, res: Response) => {
