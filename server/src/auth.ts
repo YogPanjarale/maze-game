@@ -79,6 +79,7 @@ export const signup = async (req: Request, res: Response) => {
         });
     }
     await createUser(username, password);
+    updateLogin(username);
     return res.json({
         username,
         token: jwt.sign({ username }, KEY),
