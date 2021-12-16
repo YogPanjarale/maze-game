@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^9.6.1",
 		"jsonwebtoken": "^8.5.1",
 		"socket.io-client": "^4.4.0"
 	}
